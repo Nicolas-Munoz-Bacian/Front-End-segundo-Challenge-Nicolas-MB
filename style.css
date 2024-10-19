@@ -13,7 +13,7 @@
     --color-dorado:#d79d28;
     --color-morado: #5300C8;
     --imagen-de-perfil: url(img/Mi foto.jpeg);
-    --imagen-de-encabezado: url(img/barra pizelada);
+    --imagen-de-encabezado: url(img/Brocha\ blanca.png);
     --fuente-calibri:'calibri';
     --fuente-calibri-negrita:'calibri', 'bold';
 }
@@ -52,10 +52,16 @@ body {
     background-color: var(--color-septimo);
 }
 
+.encabezado{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 /*TITULO*/
 
 .titulo__principal{
-    background-image: url(img/barra\ pixelada.png);
+    background-image: var(--imagen-de-encabezado);
     background-repeat: no-repeat;
     background-position: center;
     box-sizing: content-box;
@@ -369,6 +375,34 @@ input {
     flex-wrap: wrap;
 }
 
+/*------------------------------ BOTÓN VOLVER ARRIVA (CABECERA) ---------------------------------*/
+
+.btn_volver_arriba{
+    position: relative;
+    padding: 10px;
+    font-size: 100%;
+    font-family: var(--fuente-calibri);
+    border: 2px solid var(--color-septimo);
+    background: var(--color-primario);
+    color: var(--color-septimo);
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 10px 0;
+    float: right;
+}
+
+.Contenido_central_volver_arriba{
+    justify-content: center;
+    display: flex;
+    clear: both;
+}
+
+@media (max-width: 768px) { /* Ajusta el valor de max-width según tus necesidades */
+    .btn_volver_arriba {
+      display: none;
+    }
+  }
+
 /* ------------------------------ Responsividad ---------------------------------------*/
 
 /**BREAKPOINTS**/
@@ -414,6 +448,16 @@ input {
 
 /* Tableta */
 @media (min-width: 768px) and (max-width: 990px) {
+    .card {
+        width: calc(100% - 10px); /* Ancho del 100% menos el espacio */
+    }
+
+    .container{
+        display: flex;
+        grid-template-columns: 1fr;
+        width: 50%;
+    }
+
     .products-container {
         display: grid;
         grid-template-columns: repeat(2, 1fr); /* Cambiar a dos columnas */

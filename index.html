@@ -14,8 +14,8 @@
 </head>
 
 <body>
-  <header class="encabezado">
-   <h1 class="titulo__principal">VERSINAMIENTO DE PROYECTOS: MIS PRODUCTOS:<img class="logo_principal" src="assets/Sello Nicolás (PNG).png" alt="logo"></h1>
+  <header class="cabecera">
+   <h1 class="titulo__principal">AluraGeek: SUBE TUS IDEAS AQUÍ.<img class="logo_principal" src="assets/Sello Nicolás (PNG).png" alt="logo"></h1>
   </header>   
 
 <main class="alura-geek">
@@ -43,7 +43,7 @@
                       <div class="card">
                         <img class="image" src="./assets/Tentaciones de Pica (Mockup 1) PNG.png" alt="imagen-2"/>
                         <div class="card-container--info">
-                          <p class="name">Mermalada de mango de Pica</p>
+                          <p class="name">Mermelada de mango de Pica</p>
                           <div class="card-container--value">
                             <p class="price">$ 2.500</p>
                             <!-- Botones de eliminación en cada producto -->
@@ -71,7 +71,7 @@
                       <div class="card">
                         <img class="image" src="./assets/Tentaciones de Pica (Mockup 2) PNG.png" alt="imagen-4">
                         <div class="card-container--info">
-                          <p class="name">Envoltura reciclable de mermalada de mango de Pica</p>
+                          <p class="name">Envoltura reciclable</p>
                           <div class="card-container--value">
                             <p class="price">$ 2.000</p>
                             <!-- Botones de eliminación en cada producto -->
@@ -85,7 +85,7 @@
                       <div class="card">
                         <img class="image" src="./assets/Logo idex en 3D (Bajo el agua) (2).jpeg" alt="imagen-5"/>
                         <div class="card-container--info">
-                          <p class="name">Logo de IDEXP impreso en 3D</p>
+                          <p class="name">Logo de IDEXP en 3D</p>
                           <div class="card-container--value">
                             <p class="price">$ 10.000</p>
                             <!-- Botones de eliminación en cada producto -->
@@ -133,8 +133,52 @@
   </form>
 </section>
 
-
 </main>
+
+<div class="Contenido_central_volver_arriba">
+  <button class="btn_volver_arriba" id="volver-cabecera">Volver arriba</button>
+</div>
+          
+  <!-- Tu código HTML -->
+  <script>
+      const botonVolver = document.getElementById('volver-cabecera');
+
+      botonVolver.addEventListener('click', () => {
+        document.querySelector('.cabecera').scrollIntoView({ behavior: 'smooth' });
+      });
+
+      
+
+      const nombreInput = document.querySelector('input[name="nombre"]');
+      const form = document.querySelector('form');
+
+      form.addEventListener('submit', (event) => {
+          const nombre = nombreInput.value.trim();
+
+          if (nombre === '') {
+              alert('El campo Nombre no debe estar vacío.');
+              event.preventDefault();
+          } else if (nombre.length > 50) {
+              alert('El campo Nombre no debe tener más de 50 caracteres.');
+              event.preventDefault();
+          } else {
+              // Enviar el correo electrónico
+              emailjs.sendForm('service_id', 'template_id', form, 'user_id')
+                  .then((response) => {
+                      console.log('SUCCESS!', response.status, response.text);
+                      // Mostrar un mensaje de éxito al usuario
+                      alert('¡Mensaje enviado correctamente!');
+                      // Limpiar el formulario
+                      form.reset();
+                  })
+                  .catch((error) => {
+                      console.log('FAILED...', error);
+                      // Mostrar un mensaje de error al usuario
+                      alert('Error al enviar el mensaje. Por favor, inténtelo de nuevo más tarde.');
+                  });
+          }
+      });
+    </script>
 
 <footer class="footer">
   <div class="contenido_footer">
