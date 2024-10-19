@@ -1,0 +1,143 @@
+/**----HEADER----**/
+
+header{
+    justify-content: center;
+    align-items: center;
+}
+
+/**----MAIN----**/
+.alura-geek{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap-reverse;
+}
+/* main  */
+
+.container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Auto layout */
+.mis__productos{
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+align-items: flex-start;
+padding: 60px 40px;
+gap: 70px; 
+}
+
+.mis__productos{
+    border-radius: 10px;
+}
+
+.products-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+}
+
+/* Inside auto layout */
+
+.mis__productos div{
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+.titulo__principal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Verdana, Tahoma, sans-serif;
+    font-weight: 600;
+}
+
+/*AGREGAR PRODUCTO*/
+
+.add-product-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.formulario_contenido{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.bote img{
+    width: 5%;
+    height: auto;
+}
+
+.botones{
+    display: flex;
+    gap: 10px;
+}
+
+.products-container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr); /* Dos columnas iguales */
+    gap: 20px; /* Espacio entre las tarjetas */
+    padding: 20px;
+}
+
+.card {
+    border: 1px solid #ccc; /* Estilo opcional para fronteras */
+    border-radius: 8px; /* Redondear esquinas */
+    overflow: hidden; /* Ocultar contenido que se desborde */
+    background-color: #0055ff; /* Color de fondo de la tarjeta */
+    color: white; /* Color de texto */
+    text-align: center;
+    padding: 15px;
+}
+
+.card .name {
+    align-items: center;
+    font-size: 1.2em; /* Tamaño del texto del nombre */
+    margin-bottom: 5px; /* Espacio debajo del nombre */
+    white-space: nowrap; /* Evita que el texto se divida */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Añade puntos suspensivos si el texto es muy largo */
+}
+
+.card .price {
+    font-size: 1.1em; /* Tamaño del texto del precio */
+    margin-bottom: 10px; /* Espacio para separación */
+}
+
+.card-container--value {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: auto; /* Empuja el contenedor del botón hacia el fondo */
+}
+
+.btn__eliminar__producto {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.btn__eliminar__producto img {
+    width: 20px; /* Tamaño del ícono */
+    height: auto;
+}
+
+/*FOOTER*/
+
+.derechos_de_autor_text{
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 50%;
+}

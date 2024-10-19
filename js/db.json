@@ -1,0 +1,48 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Leche Soprole",
+      "descripcion": "Nueva leche Soprole 100% natural y ecológica",
+      "url": "https://example.com/leche-soprole.jpg",
+      "price": 1
+    },
+    {
+      "id": 2,
+      "name": "Mermelada de Mango",
+      "descripcion": "Mermelada de Mango",
+      "url": "https://example.com/mermelada-mango.jpg",
+      "price": 2
+    },
+    {
+      "id": 3,
+      "name": "Zapatos de bebe",
+      "descripcion": "Zapatos de bebe impresos en 3D para Pastel de Cumpleaños",
+      "url": "https://example.com/zapatos-bebe.jpg",
+      "price": 5
+    },
+    {
+      "id": 4,
+      "name": "Envoltura Mermelada de Mango",
+      "descripcion": "Envoltura reciclable de mermalada de mango de Pica",
+      "url": "https://example.com/envuelta-mermelada.jpg",
+      "price": 2
+    },
+    {
+      "id": 5,
+      "name": "Logo de IDEXP impreso en 3D",
+      "descripcion": "Logo de IDEXP impreso en 3D bajo el agua",
+      "url": "https://example.com/logo-idexp.jpg",
+      "price": 10
+    },
+    {
+      "id": 6,
+      "name": "Caballero en 3D",
+      "descripcion": "Caballero impreso en 3D",
+      "url": "file:///F:/challenge%202%20contruyendo%20ALura%20geek%20COPIA%202/assets/Caballero%203D.jpg",
+      "price": 10
+    }
+  ]
+}
+
+  

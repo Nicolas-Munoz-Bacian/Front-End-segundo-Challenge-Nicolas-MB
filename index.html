@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="flexbox.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="shortcut icon" href="assets/Sello Nicolás (PNG).png" type="image/x-icon">
+    <!-- Fuente del Proyecto Raleway -->
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet">
+    <title>AluraGeek</title>
+</head>
+
+<body>
+  <header class="encabezado">
+   <h1 class="titulo__principal">VERSINAMIENTO DE PROYECTOS: MIS PRODUCTOS:<img class="logo_principal" src="assets/Sello Nicolás (PNG).png" alt="logo"></h1>
+  </header>   
+
+<main class="alura-geek">
+
+      <!-- Sección de cartas de los Productos -->
+    <section class="mis__productos">
+        <div class="container">
+            <div id="products-container" class="products-container">
+                  <!-- Las tarjetas de productos se añadirán aquí dinámicamente -->
+            <div class="card_list" alt="products" data-lista>
+                      <div class="card">
+                        <img class="image" src="./assets/Leche soprole Nuevo envase.jpg" alt="imagen-1"/>
+                        <div class="card-container--info">
+                          <p class="name">Leche Soprole 100% Ecológica</p>
+                          <div class="card-container--value">
+                            <p class="price">$ 1.000</p>
+                            <!-- Botones de eliminación en cada producto -->
+                            <button class="btn__eliminar__producto" type="button">
+                            <img src="./assets/bote-de-basura.png" alt="Eliminar producto">
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+            
+                      <div class="card">
+                        <img class="image" src="./assets/Tentaciones de Pica (Mockup 1) PNG.png" alt="imagen-2"/>
+                        <div class="card-container--info">
+                          <p class="name">Mermalada de mango de Pica</p>
+                          <div class="card-container--value">
+                            <p class="price">$ 2.500</p>
+                            <!-- Botones de eliminación en cada producto -->
+                            <button class="btn__eliminar__producto" type="button">
+                              <img src="./assets/bote-de-basura.png" alt="Eliminar producto">
+                              </button>
+                          </div>
+                        </div>
+                      </div>
+            
+                      <div class="card">
+                        <img class="image" src="./assets/Zapatitos en impresión 3D (2).jpeg" alt="imagen-3">
+                        <div class="card-container--info">
+                          <p class="name">Zapatos de bebe impresos en 3D para Pastel de Cumpleaños</p>
+                          <div class="card-container--value">
+                            <p class="price">$ 5.000</p>
+                            <!-- Botones de eliminación en cada producto -->
+                            <button class="btn__eliminar__producto" type="button">
+                              <img src="./assets/bote-de-basura.png" alt="Eliminar producto">
+                              </button>
+                          </div>
+                        </div>
+                      </div>
+            
+                      <div class="card">
+                        <img class="image" src="./assets/Tentaciones de Pica (Mockup 2) PNG.png" alt="imagen-4">
+                        <div class="card-container--info">
+                          <p class="name">Envoltura reciclable de mermalada de mango de Pica</p>
+                          <div class="card-container--value">
+                            <p class="price">$ 2.000</p>
+                            <!-- Botones de eliminación en cada producto -->
+                            <button class="btn__eliminar__producto" type="button">
+                              <img src="./assets/bote-de-basura.png" alt="Eliminar producto">
+                              </button>
+                          </div>
+                        </div>
+                      </div>
+            
+                      <div class="card">
+                        <img class="image" src="./assets/Logo idex en 3D (Bajo el agua) (2).jpeg" alt="imagen-5"/>
+                        <div class="card-container--info">
+                          <p class="name">Logo de IDEXP impreso en 3D</p>
+                          <div class="card-container--value">
+                            <p class="price">$ 10.000</p>
+                            <!-- Botones de eliminación en cada producto -->
+                            <button class="btn__eliminar__producto" type="button">
+                              <img src="./assets/bote-de-basura.png" alt="Eliminar producto">
+                              </button>
+                          </div>
+                        </div>
+                      </div>
+            
+                      <div class="card">
+                        <img class="image" src="./assets/Caballero 3D.jpg" alt="imagen-6"/>
+                        <div class="card-container--info">
+                            <p class="name" id="product-name-1" required data-name>Caballero en 3D</p>
+                            <div class="card-container--value">
+                                <p class="price" id="product-price-1" required data-price>$ 10.000</p>
+                                <!-- Botones de eliminación en cada producto -->
+                                <button class="btn__eliminar__producto" type="button">
+                                    <img src="./assets/bote-de-basura.png" alt="Eliminar producto">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+            </div>       
+            </div>
+    </section> 
+
+      
+<!-- Sección de Agregar Producto -->
+<section class="agregar_producto">
+  <form class="agregar_producto_forma" id="product-form" data-formulario>
+      <h1 class="agregar_producto_titulo">AGREGAR PRODUCTO:</h1>
+      <div class="formulario__campo">
+        <input type="text" id="product-name" placeholder="Nombre del producto" required data-name>
+        <input type="text" id="product-price" placeholder="(ej: $10.000)" required data-price>
+        <input type="url" id="product-image" placeholder="URL de la imagen" required data-url>
+        
+          <div class="botones">
+              <button type="submit" class="boton__enviar">Agregar</button>
+              <button type="button" id="clearFormBtn" class="boton__limpiar">Limpiar</button>
+          </div>
+          <!-- Mensaje de error -->
+          <div id="error-message" style="color: red; display: none;"></div> <!-- Este es el nuevo div para errores -->
+      </div>
+  </form>
+</section>
+
+
+</main>
+
+<footer class="footer">
+  <div class="contenido_footer">
+      <div class="footer_text_contenido">
+          <div class="derechos_de_autor_text">
+              <h1><p class="p_footer">(+56) 9 4046 2468</p>
+                  <p class="p_footer">disenadornm@gmail.com</p>
+                  <p class="p_footer">©Drawniko. 2024.</p>
+              </h1>
+              <img class="presentación__logo__personal" src="assets/Sello Nicolás (PNG).png" alt="Logo personal">
+              <div class="presentación__enlaces__iconos">
+                      <a href="https://www.instagram.com/drawniko3/">
+                      <img src="img/icons/Instagram (blanco).png" alt="Instagram icono" width="30px" height="30px"></a>
+                      <a href="https://www.youtube.com/@NicolasMunoz-sj8uc">
+                        <img src="img/icons/Youtube (blanco).png" alt="Youtube icono" width="30px" height="25px"></a>
+                      <a href="https://www.linkedin.com/in/nicol%C3%A1s-mu%C3%B1oz-baci%C3%A1n-a11369237/">
+                        <img src="img/icons/linkedin (blanco).png" alt="Linkedin icono" width="30px" height="30px"></a>
+                      
+              </div>
+          </div>
+      </div>
+  </div>
+</footer>
+</body>
+<script>
+  // Obtener el contenedor de productos
+  const productsContainer = document.getElementById('products-container');
+
+// Obtener el formulario
+const productForm = document.getElementById('product-form');
+
+// Agregar un evento submit al formulario
+productForm.addEventListener('submit', (event) => {
+  event.preventDefault(); // Evitar que el formulario se envíe de forma predeterminada
+
+  // Obtener los valores del formulario
+  const name = document.getElementById('product-name').value;
+  const image = document.getElementById('product-image').value;
+  const price = document.getElementById('product-price').value;
+
+  // Crear un nuevo elemento div para la tarjeta del producto
+  const newProduct = document.createElement('div');
+  newProduct.classList.add('card');
+  newProduct.innerHTML = `
+    <img class="image" src="${image}" alt="imagen-producto"/>
+    <div class="card-container--info">
+      <p class="name">${name}</p>
+      <div class="card-container--value">
+        <p class="price">${price}</p>
+        <button class="btn__eliminar__producto" type="button">
+          <img src="./assets/bote-de-basura.png" alt="Eliminar producto">
+        </button>
+      </div>
+    </div>
+  `;
+
+  // Agregar un evento click al botón de eliminación
+  const deleteButton = newProduct.querySelector('.btn__eliminar__producto');
+  deleteButton.addEventListener('click', () => {
+    newProduct.remove(); // Eliminar el producto del contenedor
+  });
+
+  // Agregar el nuevo producto al contenedor
+  productsContainer.appendChild(newProduct);
+});
+</script>
+
+
+<script type="module" src="./js/script.js"></script>
+<script type="module" src="./js/conexionAPI.js"></script>
+<script type="module"src="./js/crearProducto.js"></script>
+<script type="module" src="./js/producto-lista.js"></script>
+<script type="module" src="./js/api.js"></script>
+</html>
