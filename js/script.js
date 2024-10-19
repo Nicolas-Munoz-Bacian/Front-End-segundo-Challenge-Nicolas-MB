@@ -9,9 +9,11 @@ const clearFormButton = document.getElementById('clearFormBtn');
 function narrar(texto) {
     const utterance = new SpeechSynthesisUtterance(texto);
     const voices = speechSynthesis.getVoices();
-// Filtrar las voces para encontrar una voz femenina
-    const femaleVoice = voices.find(voice => voice.name.toLowerCase().includes('female')) || voices[0];
-    utterance.voice = femaleVoice;
+
+ // Buscamos una voz en español (debes adaptar esto a tu sistema)
+    const spanishVoice = voices.find(voice => voice.lang === 'es-ES' || voice.lang === 'es-MX') || voices[0]; // Usa la primera voz si no encuentra ninguna en español
+
+    utterance.voice = spanishVoice;
     speechSynthesis.speak(utterance);
 }
 
