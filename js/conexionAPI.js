@@ -2,7 +2,7 @@
 
 export async function listarProductos() {
     try {
-        const response = await fake('https://localhost:3000/products');
+        const response = await fake('http://localhost:3000/products');
         if (!response.ok) {
             throw new Error('Error al obtener productos');
         }
