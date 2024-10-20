@@ -1,6 +1,6 @@
 /**----HEADER----**/
 
-.cabecera{
+header{
     justify-content: center;
     align-items: center;
 }
@@ -12,6 +12,7 @@
     align-items: center;
     flex-wrap: wrap-reverse;
 }
+/* main  */
 
 .container {
     display: flex;
@@ -127,7 +128,6 @@ gap: 70px;
 
 .products-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Dos columnas iguales */
     flex-wrap: wrap; /* Permite que los elementos se envuelvan */
     justify-content: center; /* Centra los elementos horizontalmente */
     gap: 20px; /* Espacio entre las tarjetas */

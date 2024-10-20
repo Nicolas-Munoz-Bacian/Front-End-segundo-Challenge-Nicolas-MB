@@ -39,9 +39,11 @@ body {
 /* Logo */
 
 .logo_principal{
-    width: 5%;
+    position: absolute;
+    width: 4%;
     height: auto;
     object-fit: contain;
+    margin-top: 70px;
 }
 
 /* AluraGeek */
@@ -59,11 +61,15 @@ body {
     color: var(--color-primario);
 }
 
+.imagen_encabezado{
+    width: 50%;
+    height: auto;
+}
+
 /*MIS PRODUCTOS*/
 
 .container{
     width: 100%;
-    max-width: 800px;
     height: 100%;
     margin: 0 auto;
     background: var(--color-primario);
@@ -80,7 +86,6 @@ body {
     max-height: 720px; /* Limitar la altura del contenedor */
     display: none;
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
 }
 
 .product-card {
@@ -403,7 +408,7 @@ input {
 @media (max-width: 767px) {
     .container{
         grid-template-columns: 1fr;
-        width: 50%;
+        width: 90%;
     }
     .products-container {
         display: grid;
@@ -411,16 +416,10 @@ input {
         gap: 10px;
         width: 50%;
     }
-    .card_list{
-        width: 80%;
-        height: auto;
-        align-items: center;
-        justify-content: center;
-        margin-left: 60px;
-    }
+
     .card {
         height: auto;
-        width: 60%;
+        width: 80%;
         margin: 0 auto;
     }
     .card img {
@@ -436,16 +435,6 @@ input {
 
 /* Tableta */
 @media (min-width: 768px) and (max-width: 990px) {
-    .card {
-        width: calc(100% - 10px); /* Ancho del 100% menos el espacio */
-    }
-
-    .container{
-        display: flex;
-        grid-template-columns: 1fr;
-        width: 50%;
-    }
-
     .products-container {
         display: grid;
         grid-template-columns: repeat(2, 1fr); /* Cambiar a dos columnas */
