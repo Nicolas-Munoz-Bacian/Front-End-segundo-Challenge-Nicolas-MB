@@ -66,9 +66,9 @@ function renderProducts(products) {
                 <div class="card-container--info">
                     <p class="name">${product.name}</p>
                     <div class="card-container--value">
-                        <p class="price">${priceWithCurrency}</p>
+                        <p class="price">$${product.price.toFixed(2)}</p>
                         <button class="btn__eliminar__producto" type="button" data-id="${product.id}">
-                            <img src="./assets/bote-de-basura.png" alt="Eliminar producto"/>
+                            <img src="./assets/bote-de-basura.png" alt="Eliminar producto">
                         </button>
                     </div>
                 </div>

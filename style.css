@@ -433,6 +433,10 @@ input {
         justify-content: space-between;
         align-items: center;
     }
+
+    .btn__eliminar__producto{
+        display: flex;
+    }
 }
 
 /* Tableta */
