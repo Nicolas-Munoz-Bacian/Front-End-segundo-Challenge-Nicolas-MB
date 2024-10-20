@@ -71,3 +71,16 @@ app.delete('/products/:id', (req, res) => {
 app.listen(port, () => {
   console.log(`Servidor corriendo en http://localhost:${port}`);
 });
+
+
+// middleware
+
+const cors = require('cors');
+app.use(cors()); // Permite las solicitudes desde cualquier origen (para desarrollo)
+
+const corsOptions = {
+    origin: 'http://localhost:5500', // Reemplaza 5500 con el puerto de tu frontend
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type']
+};
+app.use(cors(corsOptions));

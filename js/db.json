@@ -2,27 +2,13 @@
   "products": [
     {
       "id": 1,
-      "name": "Zapatos de bebe",
-      "descripcion": "Zapatos de bebe impresos en 3D para Pastel de Cumpleaños",
-      "url": "https://example.com/zapatos-bebe.jpg",
-      "price": 5
-    },
-    {
-      "id": 2,
-      "name": "Envoltura Mermelada de Mango",
-      "descripcion": "Envoltura reciclable de mermalada de mango de Pica",
-      "url": "https://example.com/envuelta-mermelada.jpg",
-      "price": 2
-    },
-    {
-      "id": 3,
-      "name": "Logo de IDEXP impreso en 3D",
+      "name": "Placa impreso en 3D",
       "descripcion": "Logo de IDEXP impreso en 3D bajo el agua",
       "url": "https://example.com/logo-idexp.jpg",
       "price": 10
     },
     {
-      "id": 4,
+      "id": 2,
       "name": "Caballero en 3D",
       "descripcion": "Caballero impreso en 3D",
       "url": "https://example.com/Caballero-3D.jpg",

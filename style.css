@@ -321,6 +321,8 @@ input {
 /*------------------------------ FOOTER (RODAPIE) ---------------------------------*/
 
 .footer{
+    margin-top: 10%;
+    position: relative;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
@@ -405,7 +407,7 @@ input {
 }
 
 /* Móvil */
-@media (max-width: 767px) {
+@media (max-width: 768px) {
     .container{
         grid-template-columns: 1fr;
         width: 90%;

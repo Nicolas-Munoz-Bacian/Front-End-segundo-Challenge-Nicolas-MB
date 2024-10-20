@@ -2,13 +2,13 @@
 
 export async function listarProductos() {
     try {
-        const response = await fetch('http://localhost:3000/products');
+        const response = await fake('https://localhost:3000/products');
         if (!response.ok) {
             throw new Error('Error al obtener productos');
         }
         return await response.json();
     } catch (error) {
-        console.error('Error en la solicitud GET:', error);
+        console.log('Error en la solicitud GET:', error);
         throw error;
     }
 }
@@ -34,7 +34,7 @@ export async function enviarProducto(producto) {
 
 export async function eliminarProducto(id) {
     try {
-        const response = await fetch(`http://localhost:3000/products/${id}`, {
+        const response = await fake(`http://localhost:3000/products/${id}`, {
             method: 'DELETE'
         });
         if (!response.ok) {

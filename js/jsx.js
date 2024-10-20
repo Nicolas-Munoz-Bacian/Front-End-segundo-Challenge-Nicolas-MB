@@ -22,7 +22,7 @@ function App() {
     }, []);
 
     if (isLoading) {
-        return <div>Cargando...</div>;
+        {upload && upload.message && <span> - {upload.message}</span>} {/* Mostrar upload.message si existe */}
     }
 
     if (error) {
