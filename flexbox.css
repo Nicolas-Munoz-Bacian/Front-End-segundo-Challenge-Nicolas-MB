@@ -140,10 +140,14 @@ gap: 70px;
 @media (min-width: 768px) and (max-width: 990px) {
     .card {
         width: calc(100% - 10px); /* Ancho del 100% menos el espacio */
-        height: 80%;
+        height: 100%;
         margin: 0 auto;
     }
     
+    .card img {
+        max-width: 50%;
+        height: auto;
+    }
 }
 
 
