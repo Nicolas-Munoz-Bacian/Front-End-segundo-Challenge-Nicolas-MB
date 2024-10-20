@@ -1,6 +1,6 @@
 /**----HEADER----**/
 
-header{
+.cabecera{
     justify-content: center;
     align-items: center;
 }
@@ -11,10 +11,6 @@ header{
     justify-content: center;
     align-items: center;
     flex-wrap: wrap-reverse;
-}
-header{
-    justify-content: center;
-    align-items: center;
 }
 
 .container {

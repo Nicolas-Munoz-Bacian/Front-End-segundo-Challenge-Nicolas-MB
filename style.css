@@ -13,7 +13,7 @@
     --color-dorado:#d79d28;
     --color-morado: #5300C8;
     --imagen-de-perfil: url(img/Mi foto.jpeg);
-    --imagen-de-encabezado: url(img/Brocha\ blanca.png);
+    --imagen-de-encabezado: url(img/pngegg.png);
     --fuente-calibri:'calibri';
     --fuente-calibri-negrita:'calibri', 'bold';
 }
@@ -46,29 +46,17 @@ body {
 
 /* AluraGeek */
 
-/*HEADER*/
-
-.header{
-    background-color: var(--color-septimo);
-}
-
-.encabezado{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
 /*TITULO*/
 
 .titulo__principal{
-    background-image: var(--imagen-de-encabezado);
     background-repeat: no-repeat;
     background-position: center;
     box-sizing: content-box;
     font-family: Verdana, Tahoma, sans-serif;
     font-weight: 600;
     font-size: 150%;
-    color: var(--color-de-link);
+    height: auto;
+    color: var(--color-primario);
 }
 
 /*MIS PRODUCTOS*/
@@ -127,7 +115,7 @@ body {
 /*layout*/
 
 .card_list{
-    display: flex;
+    display: grid;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;

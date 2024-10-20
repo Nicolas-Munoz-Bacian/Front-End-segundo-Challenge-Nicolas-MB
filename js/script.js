@@ -105,8 +105,6 @@ function renderProducts(products) {
     attachDeleteEventListeners();
 }
 
-
-
 // Función para actualizar la lista de productos
 async function updateProductList() {
     try {
