@@ -2,7 +2,7 @@
 
 export async function listarProductos() {
     try {
-        const response = await fake('http://localhost:3000/products');
+        const response = await fetch('http://localhost:3000/products');
         if (!response.ok) {
             throw new Error('Error al obtener productos');
         }
@@ -15,7 +15,7 @@ export async function listarProductos() {
 
 export async function enviarProducto(producto) {
     try {
-        const response = await fake('http://localhost:3000/products', {
+        const response = await fetch('http://localhost:3000/products', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(producto)
@@ -34,7 +34,7 @@ export async function enviarProducto(producto) {
 
 export async function eliminarProducto(id) {
     try {
-        const response = await fake(`http://localhost:3000/products/${id}`, {
+        const response = await fetch(`http://localhost:3000/products/${id}`, {
             method: 'DELETE'
         });
         if (!response.ok) {

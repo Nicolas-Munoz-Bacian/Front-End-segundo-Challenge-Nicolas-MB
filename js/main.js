@@ -5,48 +5,32 @@ const productsContainer = document.getElementById('products-container');
 const productForm = document.getElementById('product-form');
 const clearFormButton = document.getElementById('clearFormBtn');
 
-// Función para narrar texto con voz robótica femenina
+// Función para narrar texto
 function narrar(texto) {
     const utterance = new SpeechSynthesisUtterance(texto);
     const voices = speechSynthesis.getVoices();
-
- // Buscamos una voz en español (debes adaptar esto a tu sistema)
-    const spanishVoice = voices.find(voice => voice.lang === 'es-ES' || voice.lang === 'es-MX') || voices[0]; // Usa la primera voz si no encuentra ninguna en español
-
+    const spanishVoice = voices.find(voice => voice.lang.startsWith('es')) || voices[0];
     utterance.voice = spanishVoice;
     speechSynthesis.speak(utterance);
 }
 
-// Cargar productos al iniciar y añadir event listener al botón Limpiar.
+// Cargar productos al iniciar
 document.addEventListener('DOMContentLoaded', async () => {
     try {
-        const productos = await listarProductos();
+        const productos = await añadirProductos();
         renderProducts(productos);
-        // Asegurar que el evento del boton de limpiar se adjunte al cargar la página.
-        clearFormButton.addEventListener('click', clearForm); //Aquí se añade el evento una sola vez
     } catch (error) {
         console.error('Error al inicializar:', error);
-        narrar('Error al cargar los productos.');
     }
 });
 
 // Evento para agregar un producto
-productForm.addEventListener('submit', async (event) => {
+productForm.addEventListener('submit', async event => {
     event.preventDefault();
 
     const name = document.querySelector("[data-name]").value.trim();
-    let price = document.querySelector("[data-price]").value.trim();
+    const price = document.querySelector("[data-price]").value.trim();
     const url = document.querySelector("[data-url]").value.trim();
-
-
-    // Eliminar el signo de dólar si existe
-    price = price.replace('$', '');
-
-    //Validar que el precio sea un número
-    if (isNaN(parseFloat(price))) {
-      alert('Por favor, ingrese un precio válido.');
-      return;
-    }
 
     if (!name || !price || !url) {
         alert('Por favor, completa todos los campos.');
@@ -61,18 +45,17 @@ productForm.addEventListener('submit', async (event) => {
         alert('Producto agregado exitosamente.');
         updateProductList();
         clearForm();
-        narrar('Producto agregado exitosamente.');
     } catch (error) {
         console.error('Error al agregar producto:', error);
         alert('Ocurrió un error al agregar el producto.');
-        narrar('Ocurrió un error al agregar el producto.');
     }
+    
 });
 
 // Evento para limpiar el formulario (mueve esto afuera de renderProducts)
 clearFormButton.addEventListener('click', clearForm);
 
-// Función para limpiar el formulario (solo una función ahora)
+// Función para limpiar el formulario
 function clearForm() {
     document.querySelectorAll("[data-name]").forEach(element => element.value = '');
     document.querySelectorAll("[data-price]").forEach(element => element.value = '');

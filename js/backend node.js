@@ -6,15 +6,20 @@ const app = express();
 const port = 3000;
 
 // Middleware
-app.use(cors());
+const corsOptions = {
+    origin: 'http://localhost:5500', // Reemplaza 5500 con el puerto de tu frontend
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type']
+};
+app.use(cors(corsOptions)); // Permite solicitudes desde tu origen especificado
 app.use(bodyParser.json());
 
 // Almacenamiento de productos en memoria
 let products = [
   { id: 1, name: 'Leche Soprole', price: 1200, image: 'url-a-imagen-1' },
   { id: 2, name: 'Mermelada de Mango', price: 2000, image: 'url-a-imagen-2' },
-  { id: 3, name: 'Zapatos de bebe', price: 5000, image: 'url-a-imagen-3'},
-  { id: 4, name: 'Caballero en 3D', price: 10000, image: 'url-a-imagen-4'}
+  { id: 3, name: 'Zapatos de bebe', price: 5000, image: 'url-a-imagen-3' },
+  { id: 4, name: 'Caballero en 3D', price: 10000, image: 'url-a-imagen-4' }
 ];
 
 // Rutas CRUD
@@ -71,16 +76,3 @@ app.delete('/products/:id', (req, res) => {
 app.listen(port, () => {
   console.log(`Servidor corriendo en http://localhost:${port}`);
 });
-
-
-// middleware
-
-const cors = require('cors');
-app.use(cors()); // Permite las solicitudes desde cualquier origen (para desarrollo)
-
-const corsOptions = {
-    origin: 'http://localhost:5500', // Reemplaza 5500 con el puerto de tu frontend
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    allowedHeaders: ['Content-Type']
-};
-app.use(cors(corsOptions));

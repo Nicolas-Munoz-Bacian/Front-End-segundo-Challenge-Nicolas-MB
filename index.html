@@ -31,7 +31,7 @@
                       <div class="card">
                         <img class="image" src="./assets/Caballero 3D.jpg" alt="imagen-6"/>
                         <div class="card-container--info">
-                            <p class="name" id="product-name-1" required data-name>Caballero en 3D</p>
+                            <p class="name" id="product-name-1" required data-name>Caballero en 3D.</p>
                             <div class="card-container--value">
                                 <p class="price" id="product-price-1" required data-price>$ 10.000</p>
                                 <!-- Botones de eliminación en cada producto -->
@@ -52,7 +52,7 @@
       <h1 class="agregar_producto_titulo">AGREGAR PRODUCTO:</h1>
       <div class="formulario__campo">
         <input type="text" id="product-name" placeholder="Nombre del producto" required data-name>
-        <input type="text" id="product-price" placeholder="(ej: $10.000)" required data-price>
+        <input type="text" id="product-price" placeholder="(ej: $ 10.000)" required data-price>
         <input type="url" id="product-image" placeholder="URL de la imagen" required data-url>
         
           <div class="botones">
@@ -87,28 +87,6 @@
       form.addEventListener('submit', (event) => {
           const nombre = nombreInput.value.trim();
 
-          if (nombre === '') {
-              alert('El campo Nombre no debe estar vacío.');
-              event.preventDefault();
-          } else if (nombre.length > 50) {
-              alert('El campo Nombre no debe tener más de 50 caracteres.');
-              event.preventDefault();
-          } else {
-              // Enviar el correo electrónico
-              emailjs.sendForm('service_id', 'template_id', form, 'user_id')
-                  .then((response) => {
-                      console.log('SUCCESS!', response.status, response.text);
-                      // Mostrar un mensaje de éxito al usuario
-                      alert('¡Mensaje enviado correctamente!');
-                      // Limpiar el formulario
-                      form.reset();
-                  })
-                  .catch((error) => {
-                      console.log('FAILED...', error);
-                      // Mostrar un mensaje de error al usuario
-                      alert('Error al enviar el mensaje. Por favor, inténtelo de nuevo más tarde.');
-                  });
-          }
       });
     </script>
 

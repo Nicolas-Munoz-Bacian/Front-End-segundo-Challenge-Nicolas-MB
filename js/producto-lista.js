@@ -70,11 +70,6 @@ productForm.addEventListener('submit', async event => {
   const price = document.querySelector("[data-price]").value.trim();
   const url = document.querySelector("[data-url]").value.trim();
 
-  if (!name || !price || !url) {
-      alert('Por favor, completa todos los campos.');
-      return;
-  }
-
   const newProduct = { name, price: parseFloat(price), url };
 
   try {
