@@ -1,0 +1,20 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Placa impresa en 3D",
+      "descripcion": "Logo de IDEXP impreso en 3D bajo el agua",
+      "url": "https://example.com/logo-idexp.jpg",
+      "price": 10
+    },
+    {
+      "id": 2,
+      "name": "Caballero en 3D",
+      "descripcion": "Caballero impreso en 3D",
+      "url": "https://example.com/Caballero-3D.jpg",
+      "price": 10
+    }
+  ]
+}
+
+  
